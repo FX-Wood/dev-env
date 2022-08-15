@@ -69,6 +69,16 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  everblush = {
+    loaded = true,
+    path = "/Users/fxwood/.local/share/nvim/site/pack/packer/start/everblush",
+    url = "https://github.com/Everblush/everblush.nvim"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/Users/fxwood/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/fxwood/.local/share/nvim/site/pack/packer/start/packer.nvim",

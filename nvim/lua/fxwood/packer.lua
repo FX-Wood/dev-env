@@ -1,4 +1,5 @@
--- Only required if you have packer configured as `opt`
+print("loading packer")
+
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
@@ -6,5 +7,6 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'folke/tokyonight.nvim'	
   use 'mfussenegger/nvim-dap'
+  use { 'Everblush/everblush.nvim', as = 'everblush' }
 end)
 
