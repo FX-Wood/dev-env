@@ -74,10 +74,20 @@ _G.packer_plugins = {
     path = "/Users/fxwood/.local/share/nvim/site/pack/packer/start/everblush",
     url = "https://github.com/Everblush/everblush.nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/fxwood/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["nvim-dap"] = {
     loaded = true,
     path = "/Users/fxwood/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/fxwood/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
