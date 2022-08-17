@@ -6,6 +6,7 @@ local nnoremap = Remap.nnoremap
 local vnoremap = Remap.vnoremap
 local inoremap = Remap.inoremap
 local xnoremap = Remap.xnoremap
+local noremap = Remap.noremap
 local nmap = Remap.nmap
 
 -- for this to work on mac your terminal must send the right key
@@ -18,3 +19,7 @@ inoremap("<A-k>", "<Esc>:m .-2<CR>==gi")
 vnoremap("<A-j>", ":m '>+1<CR>gv=gv")
 vnoremap("<A-k>", ":m '<-2<CR>gv=gv")
 
+noremap("<up>", "<nop>")
+noremap("<down>", "<nop>")
+noremap("<left>", "<nop>")
+noremap("<right>", "<nop>")

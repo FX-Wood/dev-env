@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/fxwood/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
   },
+  ["nvim-surround"] = {
+    loaded = true,
+    path = "/Users/fxwood/.local/share/nvim/site/pack/packer/start/nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/fxwood/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
