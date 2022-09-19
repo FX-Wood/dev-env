@@ -110,3 +110,6 @@ path+=('/usr/local/bin/nvim-macos/bin/')
 alias py="python3"
 alias ll="ls -lah"
 
+# nvim stuff
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh

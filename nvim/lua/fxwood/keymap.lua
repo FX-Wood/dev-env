@@ -19,5 +19,6 @@ M.vnoremap = bind("v")
 M.xnoremap = bind("x")
 M.inoremap = bind("i")
 M.noremap = bind("")
+M.noremap_bang = bind("!")
 
 return M
