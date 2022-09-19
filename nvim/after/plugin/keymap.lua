@@ -33,6 +33,7 @@ nnoremap("<leader>g", function()
     require('telescope.builtin').git_files()
 end)
 
+-- see https://vim.fandom.com/wiki/Avoid_the_escape_key
 noremap("<leader><leader>", "<Esc>")
 noremap_bang("<leader><leader>", "<Esc>")
 
