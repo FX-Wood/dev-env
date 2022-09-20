@@ -1,6 +1,51 @@
--- shamelessly stolen from here: 
+local Remap = require'fxwood.keymap'
+local nnoremap = Remap.nnoremap
+local inoremap = Remap.nnoremap
+-- https://github.com/hrsh7th/nvim-cmp#setup
+local cmp = require('cmp')
+cmp.setup {
+    snippet = {
+        expand = function(args)
+            require('luasnip').lsp_expand(args.body)
+        end,
+    },
+       window = {
+      -- completion = cmp.config.window.bordered(),
+      -- documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    }),
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' }, -- For luasnip users.
+        -- { name = 'ultisnips' }, -- For ultisnips users.
+        -- { name = 'snippy' }, -- For snippy users.
+    }, {
+        { name = 'buffer' },
+    })
+}
+
+local lspconfig = require'lspconfig'
+
+-- shamelessly stolen from:
+-- https://github.com/ThePrimeagen/.dotfiles/blob/1f207bf4049402b50fdc871b979e850de0371f73/nvim/.config/nvim/after/plugin/lsp.lua#L89-L116
+local function config(_config)
+    return vim.tbl_deep_extend("force", {
+        capabilities = require'cmp_nvim_lsp'.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+        on_attach = function()
+            nnoremap("gd", function() vim.lsp.buf.devinition() end)
+            nnoremap("K", function() vim.lsp.buf.hover() end)
+        end
+        }, _config or {})
+end
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua
-require'lspconfig'.sumneko_lua.setup {
+lspconfig.sumneko_lua.setup(config({
   settings = {
     Lua = {
       runtime = {
@@ -21,4 +66,4 @@ require'lspconfig'.sumneko_lua.setup {
       },
     },
   },
-}
+}))

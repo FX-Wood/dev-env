@@ -19,3 +19,5 @@ vim.opt.cmdheight = 1
 
 vim.g.mapleader = " "
 
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+
