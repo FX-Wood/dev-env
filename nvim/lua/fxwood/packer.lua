@@ -6,7 +6,12 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     
+    use { 'Everblush/everblush.nvim', as = 'everblush' }
+    use 'folke/tokyonight.nvim'   
+    use { 'kylechui/nvim-surround' }
+
     use 'mfussenegger/nvim-dap'
+
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -17,9 +22,6 @@ return require('packer').startup(function(use)
         requires = { 'nvim-lua/plenary.nvim' }
     }
     
-    use { 'Everblush/everblush.nvim', as = 'everblush' }
-    use 'folke/tokyonight.nvim'   
-    use { 'kylechui/nvim-surround' }
 
     use {
         'nvim-treesitter/nvim-treesitter', {
@@ -27,5 +29,8 @@ return require('packer').startup(function(use)
             run = ":TSUpdate",
         } 
     }
+
+    use 'neovim/nvim-lspconfig'
+
 end)
 
