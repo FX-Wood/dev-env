@@ -20,5 +20,12 @@ return require('packer').startup(function(use)
     use { 'Everblush/everblush.nvim', as = 'everblush' }
     use 'folke/tokyonight.nvim'   
     use { 'kylechui/nvim-surround' }
+
+    use {
+        'nvim-treesitter/nvim-treesitter', {
+            -- from here: https://youtu.be/hkxPa5w3bZ0?t=173
+            run = ":TSUpdate",
+        } 
+    }
 end)
 
