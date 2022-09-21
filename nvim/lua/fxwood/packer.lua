@@ -8,6 +8,8 @@ return require('packer').startup(function(use)
 
     use { 'Everblush/everblush.nvim', as = 'everblush' }
     use 'folke/tokyonight.nvim'
+    use 'navarasu/onedark.nvim'
+
     use { 'kylechui/nvim-surround' }
 
     use 'mfussenegger/nvim-dap'
