@@ -41,9 +41,19 @@ local function config(_config)
         on_attach = function()
             nnoremap("gd", function() vim.lsp.buf.definition() end)
             nnoremap("K", function() vim.lsp.buf.hover() end)
+            nnoremap("gr", function() vim.lsp.buf.references() end)
         end
         }, _config or {})
 end
+
+lspconfig.tsserver.setup(config({
+    cmd = { "typescript-language-server", "--stdio" },
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+    init_options = {
+        hostinfo = 'neovim'
+    },
+}))
+
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua
 lspconfig.sumneko_lua.setup(config({
   settings = {
