@@ -110,6 +110,8 @@ path+=('/usr/local/bin/nvim-macos/bin/')
 alias py="python3"
 alias ll="ls -lah"
 
+alias gd="git diff -- . ':^*package-lock.json'"
+
 # nvim stuff
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
