@@ -6,6 +6,7 @@ local Remap = require("fxwood.keymap")
 local nnoremap = Remap.nnoremap
 local vnoremap = Remap.vnoremap
 local inoremap = Remap.inoremap
+local tnoremap = Remap.tnoremap
 local xnoremap = Remap.xnoremap
 local noremap = Remap.noremap
 local nmap = Remap.nmap
@@ -36,4 +37,8 @@ end)
 -- see https://vim.fandom.com/wiki/Avoid_the_escape_key
 noremap("<leader><leader>", "<Esc>")
 noremap_bang("<leader><leader>", "<Esc>")
+tnoremap("<leader><leader>", '<C-\\><C-n>')
+
+-- see :help terminal
+tnoremap('<Esc>', '<C-\\><C-n>')
 
