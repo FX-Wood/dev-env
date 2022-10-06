@@ -106,6 +106,7 @@ source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 chruby ruby-3.1.2 # run chruby to see actual version
 
 path+=('/usr/local/bin/nvim-macos/bin/')
+path+=('/Applications/Postgres.app/Contents/Versions/latest/bin')
 
 alias py="python3"
 alias ll="ls -lah"
