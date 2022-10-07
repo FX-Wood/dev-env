@@ -1,4 +1,3 @@
-print('loading colors')
 -- tokyonight theme
 -- vim.g.tokyonight_transparent_sidebar = true
 -- vim.g.tokyonight_transparent_sidebar = true

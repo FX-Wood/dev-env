@@ -1,4 +1,3 @@
-print('loading set')
 vim.opt.guicursor = ""
 
 vim.opt.nu = true

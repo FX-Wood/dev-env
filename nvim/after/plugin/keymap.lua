@@ -1,4 +1,3 @@
-print('loading keymaps')
 -- shamelessly stolen from theprimeagen
 -- https://github.com/ThePrimeagen/.dotfiles/blob/61784572c81d7a1973f6c0a2a4930c6739c89cc9/nvim/.config/nvim/after/plugin/keymap/init.lua
 -- see also: https://neovim.io/doc/user/map.html#map-overview
