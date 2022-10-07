@@ -99,15 +99,22 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+if [ "$(hostname)" = FXs-MacBook-Pro.local ] ; then
+    # ruby stuff for jekyll
+    source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+    source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+    chruby ruby-3.1.2 # run chruby to see actual version
+    
+    # nvim stuff
+    export NVM_DIR=~/.nvm
+    source $(brew --prefix nvm)/nvm.sh
 
-# ruby stuff for jekyll
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.1.2 # run chruby to see actual version
+    path+=('/usr/local/bin/nvim-macos/bin/')
+    path+=('/Applications/Postgres.app/Contents/Versions/latest/bin')
+fi
 
-path+=('/usr/local/bin/nvim-macos/bin/')
-path+=('/Applications/Postgres.app/Contents/Versions/latest/bin')
 
+alias gcm='git commit -m'
 alias py="python3"
 alias ll="ls -lah"
 
@@ -117,6 +124,3 @@ gde() {
     git diff "$@" -- . ':^*package-lock.json' 
 }
 
-# nvim stuff
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
