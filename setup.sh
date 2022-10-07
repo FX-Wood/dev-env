@@ -25,10 +25,11 @@ nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 # install zsh
 sudo apt-get update && sudo apt-get upgrade 
 sudo apt-get -y install zsh
-sudo chsh -s /bin/zsh
+sudo chsh -s /bin/zsh $USER
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 sudo rm -rf ~/.zshrc
+sudo rm -rf ~/.zshrc.pre-oh-my-zsh
 ln -s ~/dev-env/shell/.zshrc ~/.zshrc
 
