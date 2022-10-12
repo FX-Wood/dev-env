@@ -116,6 +116,7 @@ fi
 
 alias gcm='git commit -m'
 alias py="python3"
+alias pip="pip3"
 alias ll="ls -lah"
 
 # git diff but exclude stuff
