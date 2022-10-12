@@ -41,5 +41,5 @@ tnoremap("<leader><leader>", '<C-\\><C-n>')
 -- see :help terminal
 tnoremap('<Esc>', '<C-\\><C-n>')
 
-noremap('<Esc>', ':noh<CR>')
+noremap('<silent> <Esc>', ':noh<CR>')
 
