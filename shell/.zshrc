@@ -120,9 +120,28 @@ alias py="python3"
 alias pip="pip3"
 alias ll="ls -lah"
 
-# git diff but exclude stuff
-# TODO: allow arbitrary excludes
 gde() { 
-    git diff "$@" -- . ':^*package-lock.json' 
+    # git diff but exclude stuff
+    # -f list of 0 or more files to exclude
+    # -b ref to diff against
+    # see https://stackoverflow.com/questions/12128296/is-there-a-way-to-avoid-positional-arguments-in-bash
+    local options
+    local files=""
+    local branch=""
+    while getopts 'f:b:' option; do
+        case ${option} in
+            f) 
+                files+=("':^*"${OPTARG}"'");;
+            b) 
+                branch="${OPTARG}";;
+            *)
+                echo "unknown parameter: ${1}" >&2
+                return 1
+                ;;
+        esac
+    done
+
+    assembled="git diff $branch -- . $files"
+    eval $assembled
 }
 
