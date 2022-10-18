@@ -41,5 +41,11 @@ tnoremap("<leader><leader>", '<C-\\><C-n>')
 -- see :help terminal
 tnoremap('<Esc>', '<C-\\><C-n>')
 
-noremap('<silent> <Esc>', ':noh<CR>')
+nnoremap('<silent> <Esc>', ':noh<CR>')
+
+-- change windows
+nnoremap('<leader>w', 'C-w')
+
+-- reload vimrc
+nnoremap('<leader>sv', ':source $MYVIMRC<CR>')
 
