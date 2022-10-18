@@ -43,8 +43,8 @@ tnoremap('<Esc>', '<C-\\><C-n>')
 
 nnoremap('<silent> <Esc>', ':noh<CR>')
 
--- change windows
-nnoremap('<leader>w', 'C-w')
+-- windows
+nnoremap('<leader>w', '<C-w>')
 
 -- reload vimrc
 nnoremap('<leader>sv', ':source $MYVIMRC<CR>')
