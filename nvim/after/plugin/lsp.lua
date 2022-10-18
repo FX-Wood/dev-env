@@ -1,6 +1,6 @@
 local Remap = require'fxwood.keymap'
 local nnoremap = Remap.nnoremap
-local inoremap = Remap.nnoremap
+
 -- https://github.com/hrsh7th/nvim-cmp#setup
 local cmp = require('cmp')
 cmp.setup {
@@ -37,7 +37,7 @@ local lspconfig = require'lspconfig'
 -- https://github.com/ThePrimeagen/.dotfiles/blob/1f207bf4049402b50fdc871b979e850de0371f73/nvim/.config/nvim/after/plugin/lsp.lua#L89-L116
 local function config(_config)
     return vim.tbl_deep_extend("force", {
-        capabilities = require'cmp_nvim_lsp'.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+        capabilities = require'cmp_nvim_lsp'.default_capabilities(),
         on_attach = function()
             nnoremap("gd", function() vim.lsp.buf.definition() end)
             nnoremap("K", function() vim.lsp.buf.hover() end)
@@ -77,3 +77,6 @@ lspconfig.sumneko_lua.setup(config({
     },
   },
 }))
+
+lspconfig.pyright.setup(config())
+
