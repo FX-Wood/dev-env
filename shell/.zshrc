@@ -112,6 +112,8 @@ if [ "$(hostname)" = FXs-MacBook-Pro.local ] ; then
     path+=('/usr/local/bin/nvim-macos/bin/')
     path+=('/Applications/Postgres.app/Contents/Versions/latest/bin')
     path+=('/Users/fxwood/Library/Python/3.9/bin')
+
+    alias python='python3'
 fi
 
 
