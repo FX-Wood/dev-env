@@ -5,8 +5,11 @@ configure_nvim() {
     echo "linking nvim config"
     mkdir -p ~/.config
     sudo rm -rf ~/.config/nvim
-    ln -s ~/.dotfiles/nvim ~/.config
-    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+    ln -s ~/projects/.dotfiles/nvim ~/.config
+    # start neovim so that packer gets downloaded
+    nvim --headless -c 'echo "hello"' -c q
+    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' -c q
+    nvim --headless -c "TSInstallSync maintained" -c q
 }
 
 install_zsh() {
@@ -50,6 +53,10 @@ elif [ "$(uname -s)" = "Darwin" ] ; then
     mac_set_keyboard_repeat
     # delete zshrc
     # link .dotfiles zshrc to home one
-
+    configure_nvim
+    # install nerd fonts so that lualine will work
+    brew tap homebrew/cask-fonts
+    brew install font-hack-nerd-font
+    # set iTerm non-ascii characters to nerd fonts
 fi
 
