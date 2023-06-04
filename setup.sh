@@ -36,6 +36,12 @@ install_docker_engine() {
     sudo usermod -aG docker $USER
 }
 
+posix_install_nvm() {
+    # node version manager
+    # this won't work on windows, use the windows nvm project
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+}
+
 if grep -iq "raspberry" /proc/device-tree/model > /dev/null 2>&1; then
 	echo "raspberry pi detected"
     sh ./install-scripts/neovim-raspbian.sh
