@@ -55,7 +55,7 @@ lspconfig.tsserver.setup(config({
 }))
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua
-lspconfig.sumneko_lua.setup(config({
+lspconfig.lua_ls.setup(config({
   settings = {
     Lua = {
       runtime = {
