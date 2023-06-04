@@ -64,5 +64,8 @@ elif [ "$(uname -s)" = "Darwin" ] ; then
     brew tap homebrew/cask-fonts
     brew install font-hack-nerd-font
     # set iTerm non-ascii characters to nerd fonts
+    # install nvm
+    posix_install_nvm
+    # add nvm to .zshrc (https://github.com/nvm-sh/nvm#installing-and-updating)
 fi
 
