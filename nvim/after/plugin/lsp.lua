@@ -80,3 +80,4 @@ lspconfig.lua_ls.setup(config({
 
 lspconfig.pyright.setup(config())
 
+lspconfig.eslint.setup(config())
