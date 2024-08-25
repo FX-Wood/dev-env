@@ -70,7 +70,10 @@ require('lazy').setup({
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
-        javascript = { { "prettierd", "prettier" } },
+        javascript = { 'prettierd' },
+        typescript = { 'prettierd' },
+        javascriptreact = { 'prettierd' },
+        typescriptreact = { 'prettierd' },
       },
     },
   },
@@ -141,7 +144,7 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    main = "ibl",
+    main = 'ibl',
     opts = {},
   },
 
@@ -188,12 +191,12 @@ require('lazy').setup({
   -- { import = 'custom.plugins' },
   {
     'kylechui/nvim-surround',
-    version="*",
-    event="VeryLazy",
+    version = '*',
+    event = 'VeryLazy',
     config = function()
       require('nvim-surround').setup()
-    end
-  }
+    end,
+  },
 }, {})
 
 -- [[ Setting options ]]
@@ -219,12 +222,12 @@ vim.g.clipboard = {
   -- :h clipboard-osc52
   name = 'OSC 52',
   copy = {
-    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
-    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+    ['+'] = require('vim.ui.clipboard.osc52').copy '+',
+    ['*'] = require('vim.ui.clipboard.osc52').copy '*',
   },
   paste = {
-    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
-    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+    ['+'] = require('vim.ui.clipboard.osc52').paste '+',
+    ['*'] = require('vim.ui.clipboard.osc52').paste '*',
   },
 }
 
@@ -262,10 +265,10 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Enable hardmode
-for _, mode in pairs({ 'n', 'i', 'v', 'x' }) do
-    for _, key in pairs({ '<Up>', '<Down>', '<Left>', '<Right>' }) do
-        vim.keymap.set(mode, key, '<nop>')
-    end
+for _, mode in pairs { 'n', 'i', 'v', 'x' } do
+  for _, key in pairs { '<Up>', '<Down>', '<Left>', '<Right>' } do
+    vim.keymap.set(mode, key, '<nop>')
+  end
 end
 
 -- [[ Highlight on yank ]]
@@ -476,7 +479,7 @@ mason_lspconfig.setup_handlers {
       settings = servers[server_name],
       filetypes = (servers[server_name] or {}).filetypes,
     }
-  end
+  end,
 }
 
 -- [[ Configure nvim-cmp ]]
