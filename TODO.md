@@ -16,7 +16,7 @@
   - reinstall treesitter because of bundled parsers
 - install nvm
 - install node lts
-- install node
+- install node deps (this should be nvm config)
 - install telescope deps
   - fd
   - ripgrep
